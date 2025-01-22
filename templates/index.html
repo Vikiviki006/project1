@@ -1,0 +1,202 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Osteoporosis DETECTION USING MACHINE LEARNING</title>
+		<style>
+	.form-group {
+    margin-bottom: 5px!important;
+	}
+	.mt-4, .my-4 {
+    margin-top: 5px!important;
+	}
+	</style>
+  </head>
+
+  <body><div>
+
+  <br>
+  
+    <nav class="nav nav-pills nav-justified navbar-dark bg-dark">
+      </nav>
+      </div>
+      <div class="container">
+          <h2 style="color: rgb(24, 163, 255);" class=" text-center mt-3">Osteoporosis DETECTION USING MACHINE LEARNING</h2>
+		  
+		  <img src='static/banner.jpg' width="98%" style="margin-left:1%;" />		
+		  
+          <section>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                  <div class="row">
+                    <div class="col text-center">
+                      
+                      </div>
+                  </div>
+                  <form action="/" method="POST">
+						
+						
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Age</label>
+						<input type="text" name="Age" value="" class="form-control" required >
+                    </div>
+                  </div>
+				  
+
+				  
+				   <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Gender</label>
+						<select name="Gender" required class="form-control" >
+						<option value="0">Male</option>
+						<option value="1">Female</option>
+						</select>
+						
+                    </div>
+                  </div>
+				  
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Hormonal_Changes</label>
+						<select name="Hormonal_Changes" required class="form-control" >
+						<option value="0">Normal</option>
+						<option value="1">Postmenopausal</option>
+						</select>
+						
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Family_History</label>
+						<select name="Family_History" required class="form-control" >
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+						</select>
+						
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Ethnicity</label>
+						<select name="Ethnicity" required class="form-control" >
+						<option value="1">Asian</option>
+						<option value="2">Caucasian</option>
+            <option value="3">African American</option>
+						</select>
+						
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Body_Weight</label>
+						<select name="Body_Weight" required class="form-control" >
+						<option value="0">Normal</option>
+						<option value="1">Underweight</option>
+						</select>
+						
+                    </div>
+                  </div>
+                  
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Calcium_Intake</label>
+						<select name="Calcium_Intake" required class="form-control" >
+						<option value="0">Low</option>
+						<option value="1">Adequate</option>
+						</select>
+						
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Vitamin_D</label>
+						<select name="Vitamin_D" required class="form-control" >
+						<option value="0">Insufficient</option>
+						<option value="1">sufficient</option>
+						</select>
+						
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Physical_Activity</label>
+						<select name="Physical_Activity" required class="form-control" >
+						<option value="0">Sedentary</option>
+						<option value="1">Active</option>
+						</select>
+						
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Alcohol_Consumption</label>
+						<select name="Alcohol_Consumption" required class="form-control" >
+						<option value="0">None</option>
+						<option value="1">Moderate</option>
+						</select>
+					
+                    </div>
+                  </div>
+
+
+                  <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Medical_Conditions</label>
+						<select name="Medical_Conditions" required class="form-control" >
+						<option value="3">None</option>
+						<option value="1">Hyperthyroidism</option>
+            <option value="2">Rheumatoid Arthritis</option>
+						</select>
+						
+                    </div>
+                  </div>
+
+
+				   <div class="row align-items-center mt-4">
+                    <div class="col form-group">
+                        <label>Medications</label>
+						<select name="Medications" required class="form-control" >
+						<option value="0">None</option>
+						<option value="1">Corticosteroids</option>
+						</select>
+                    </div>
+                  </div>
+				     						
+                                 
+                  <div class="row justify-content-start mt-4">
+                    <div class="col">
+                       <button class="btn btn-success mt-4" type="submit">Submit</button>
+                    </div>
+                  </div>
+				  <br><br><br>
+                </div>
+              </div>
+            </div>
+          </section>
+      </div>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

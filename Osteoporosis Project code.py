@@ -10,6 +10,8 @@ Original file is located at
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import pickle
+
 
 df=pd.read_csv("Osteoporosis Dataset.csv")
 df.head(10)
@@ -38,12 +40,12 @@ df.Gender.replace(to_replace=["Female","Male"],value=[0,1],inplace=True)
 df.Hormonal_Changes.replace(to_replace=["Postmenopausal","Normal"],value=[0,1],inplace=True)
 df.replace(to_replace=["No","Yes"],value=[0,1],inplace=True)
 df.Body_Weight.replace(to_replace=["Underweight","Normal"],value=[0,1],inplace=True)
-df.Calcium_Intake	.replace(to_replace=["Low","Adequate"],value=[0,1],inplace=True)
+df.Calcium_Intake.replace(to_replace=["Low","Adequate"],value=[0,1],inplace=True)
 df.Vitamin_D.replace(to_replace=["Insufficient","Sufficient"],value=[0,1],inplace=True)
 df.Physical_Activity.replace(to_replace=["Sedentary","Active"],value=[0,1],inplace=True)
 df.Ethnicity.replace(to_replace=["Asian","Caucasian","African American"],value=[1,2,3],inplace=True)
-df.drop(columns="Alcohol_Consumption",axis=1,inplace=True)
-#df.Alcohol_Consumption.replace(to_replace=["Moderate","None"]),value=[0,1],inplace=True)
+#df.drop(columns="Alcohol_Consumption",axis=1,inplace=True)
+df.Alcohol_Consumption.replace(to_replace=["Moderate","None"],value=[0,1],inplace=True)
 #df["Alcohol_Consumption"].fillna(value=0,inplace=True)
 #df['Alcohol_Consumption']=df['Alcohol_Consumption'].astype(int)
 df.Medical_Conditions.replace(to_replace=["Hyperthyroidism","Rheumatoid Arthritis","None"],value=[1,2,3],inplace=True)
@@ -53,6 +55,9 @@ df.Medications.replace(to_replace=["Corticosteroids","None"],value=[1,0],inplace
 df["Medications"].fillna(value=0,inplace=True)
 #df['Medications']=df['Medications'].astype(int)
 
+
+df.drop(columns="Smoking",axis=1,inplace=True)
+df.drop(columns="Prior_Fractures",axis=1,inplace=True)
 df
 
 df.info()
@@ -134,7 +139,7 @@ from sklearn import tree
 fig=plt.figure(figsize=(20,20))
 dtree=tree.plot_tree(DT,feature_names=feature_names,filled=True,fontsize=10)
 
-nd= [69, 0, 1, 1, 0, 0, 0, 1, 1,0,1,0,1]
+nd= [69, 0, 1, 1, 0, 0, 0, 1, 1,0,1,0]
 nd_df = pd.DataFrame([nd], columns=x.columns)
 predictions = DT.predict(nd_df)
 if (predictions==[0]):
@@ -142,10 +147,15 @@ if (predictions==[0]):
 else:
    print("The patient has risk of having Osteoporosis")
 
-nd= [30, 1, 0, 1, 0 , 3, 0, 1, 1 ,0,1,0,1]
+nd= [30, 1, 0, 1, 0 , 3,1, 0, 1 ,0,1,0]
 nd_df = pd.DataFrame([nd], columns=x.columns)
 predictions = DT.predict(nd_df)
 if (predictions==[0]):
   print("The patient dose not has risk of having  Osteoporosis")
 else:
-   print("The patient has risk of having  Osteoporosis"),
+   print("The patient has risk of having  Osteoporosis")
+   
+   
+file=open('my_model.pkl','wb')
+pickle.dump(DT,file,protocol=3)
+file.close()   
